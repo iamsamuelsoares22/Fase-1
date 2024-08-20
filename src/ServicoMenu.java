@@ -3,13 +3,18 @@ import javax.swing.*;
 public class ServicoMenu {
 
     //--------------- Escolhas do(s) menu(s) para o JOptionPane ---------------//
-
     // >> Menu principal
     private static String[] escolhaPrincipal = {"Tarefas", "Projetos", "Consultas", "Sair"};
     // >> Menu tarefas
     private static String[] escolhaTarefas = {"Criar tarefa", "Visualizar", "Sair"};
     // >> Menu projetos
     private static String[] escolhaProjetos = {"Criar projeto", "Visualizar", "Sair"};
+    // >> Menu consultas
+    private static String[] escolhaConsulta = {"Visualizar tarefas", "Visualizar projetos", "Sair"};
+
+
+    //---------------------------------------- Criando instâncias ----------------------------------------//
+    ServicoMenuSecundario servicoMenuSecundario = new ServicoMenuSecundario();
      
 
 
@@ -35,7 +40,7 @@ public class ServicoMenu {
                     break;
                 
                 case 3:
-
+                    menuConsultas();
                     break;
 
                 case 4:
@@ -61,7 +66,7 @@ public class ServicoMenu {
         
             switch (resultadoEscolhaTarefas + 1) {
                 case 1:
-                    
+                    servicoMenuSecundario.criarTarefa();
                     break;
             
                 case 2:
@@ -101,11 +106,43 @@ public class ServicoMenu {
                 case 3:
                     sairMenuProjetos = true;
                     break;
-                    
+
             }
         }
 
     }
+
+
+    public void menuConsultas(){
+
+        // Variável para a estrutura de repetição
+        boolean sairMenuConsultas = false;
+
+        // Repetir programa até que a escolha sair seja executada 
+        while(sairMenuConsultas == false){
+
+            // Escolha do Menu principal
+            int resultadoEscolhaConsulta = JOptionPane.showOptionDialog(null, "Gerenciamento de consultas: ", "Menu consulta", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, escolhaConsulta, escolhaConsulta[0]);
+        
+            switch (resultadoEscolhaConsulta + 1) {
+                case 1:
+                    
+                    break;
+            
+                case 2:
+
+                    break;
+                
+                case 3:
+                    sairMenuConsultas = true;
+                    break;
+
+            }
+        }
+
+    }
+
+    
 
 }
 
