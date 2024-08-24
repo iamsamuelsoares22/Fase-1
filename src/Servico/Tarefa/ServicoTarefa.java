@@ -1,20 +1,21 @@
 package Servico.Tarefa;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import java.time.LocalDate;
 
 import Constantes.Constantes;
 import Tarefa.Tarefa.Prioridade;
+
 import Tarefa.TarefaPrazo;
 import Tarefa.TarefaSimples;
 
 public class ServicoTarefa {
 
-    // Lista responsável por armazenar as tarefas simples
-    HashMap<String, TarefaSimples> tarefasSimples = new HashMap<String, TarefaSimples>();
-    // Lista responsável por armazenar as tarefas com prazos
-    HashMap<String, TarefaPrazo> tarefasPrazo = new HashMap<String, TarefaPrazo>();
+    //-------------------------------- Listas --------------------------------//
+    public static ArrayList<TarefaSimples> tarefasSimples = new ArrayList<TarefaSimples>();
+    public static ArrayList<TarefaPrazo> tarefasComPrazo = new ArrayList<TarefaPrazo>();
+
 
     //------------------------------ Funções tarefas ------------------------------//
     public void criarTarefaSimples(){
@@ -57,10 +58,12 @@ public class ServicoTarefa {
         }
 
         //Listando tarefa simples
-        tarefasSimples.put(descricao, tarefasimples);
+        tarefasSimples.add(tarefasimples);
 
         // Confirmação de tarefa
         JOptionPane.showMessageDialog(null, "Tarefa criada com sucesso!");
+
+        
     }
 
     public void criarTarefaPrazo(){
@@ -105,7 +108,7 @@ public class ServicoTarefa {
         }
 
         //Listando tarefa com prazo
-        tarefasPrazo.put(descricao, tarefaprazo);
+        tarefasComPrazo.add(tarefaprazo);
 
         // Confirmação de tarefa
         JOptionPane.showMessageDialog(null, "Tarefa criada com sucesso!");
@@ -113,7 +116,25 @@ public class ServicoTarefa {
 
     // Visualizar lista de tarefas simples
     public String visualizarTarefasSimples(){
-        return tarefasSimples.toString();
+        String varAuxiliar = "";
+
+        for (int i = 0; i < tarefasSimples.size(); i++) {
+            varAuxiliar += tarefasSimples.get(i);
+        }
+       
+        return varAuxiliar;
+
+    }
+
+    // Visualizar lista de tarefas simples
+    public String visualizarComPrazo(){
+        String varAuxiliar = "";
+
+        for (int i = 0; i < tarefasComPrazo.size(); i++) {
+            varAuxiliar += tarefasComPrazo.get(i);
+        }
+       
+        return varAuxiliar;
 
     }
 

@@ -76,8 +76,7 @@ public class ServicoMenu {
                     break;
             
                 case Constantes.VISUALIZAR_T:
-                    JOptionPane.showMessageDialog(null, "Tarefas simples: \n" + servicoTarefa.visualizarTarefasSimples());
-                    
+                    JOptionPane.showMessageDialog(null, "Minhas tarefas: \n\n Tarefas simples:" + servicoTarefa.visualizarTarefasSimples() + "\n\n Tarefas com prazo: \n" + servicoTarefa.visualizarComPrazo());                    
                     break;
                 
                 case Constantes.SAIR_T:

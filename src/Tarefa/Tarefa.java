@@ -1,5 +1,4 @@
 package Tarefa;
-import java.util.List;
 
 public abstract class Tarefa {
     
@@ -63,7 +62,7 @@ public abstract class Tarefa {
 
     @Override
 	public String toString() {
-		String retorno = "A tarefa "+ this.descricao + " tem priodade "+ this.prioridade + " e status " + this.status;
+		String retorno = "Descrição: "+ this.descricao + " | Prioridade: "+ this.prioridade + " | Status: " + this.status;
 		return retorno;
 	}
 

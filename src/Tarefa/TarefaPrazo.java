@@ -41,7 +41,7 @@ public class TarefaPrazo extends Tarefa {
 
 	@Override
 	public String toString() {
-		String retorno = "O projeto "+ getDescricao() + "tem prazo " +getPrazo();
+		String retorno = "Projeto: "+ getDescricao() + "| Prioridade: " + getPrioridade() + "| Prazo: " +getPrazo();
 	return retorno;
 	}
 
