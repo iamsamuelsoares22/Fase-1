@@ -1,3 +1,4 @@
+package Tarefa;
 public class TarefaSimples extends Tarefa {
 
     //----------------------------------- Construtores -----------------------------------//

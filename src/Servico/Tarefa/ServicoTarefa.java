@@ -1,5 +1,13 @@
+package Servico.Tarefa;
+
 import java.util.HashMap;
-import javax.swing.*;
+import javax.swing.JOptionPane;
+import java.time.LocalDate;
+
+import Constantes.Constantes;
+import Tarefa.Tarefa.Prioridade;
+import Tarefa.TarefaPrazo;
+import Tarefa.TarefaSimples;
 
 public class ServicoTarefa {
 
@@ -11,13 +19,11 @@ public class ServicoTarefa {
     //------------------------------ Funções tarefas ------------------------------//
     public void criarTarefaSimples(){
 
-        
-        String nome = JOptionPane.showInputDialog(null, "Digite o nome da tarefa: ");
         String descricao = JOptionPane.showInputDialog(null, "Digite a descrição da tarefa: ");
-        String prioridade = "";
-        String status = Constantes.NAO_FINALIZADA;
 
+        TarefaSimples tarefasimples = new TarefaSimples(descricao, Prioridade.baixa);
 
+        
         //----------------------------------------------- Escolha prioridade -----------------------------------------------//
         // >> Menu prioridade
         String[] escolhaPrioridade = {"Baixa", "Média", "Alta"};
@@ -33,27 +39,25 @@ public class ServicoTarefa {
         
             switch (resultadoEscolhaTarefas + 1) {
                 case Constantes.BAIXA:
-                    prioridade = "Baixa";
+                    tarefasimples.setPrioridade(Prioridade.baixa);
                     sairEscolhaPrioridade = true;
                     break;
             
                 case Constantes.MEDIA:
-                    prioridade = "Média";
+                    tarefasimples.setPrioridade(Prioridade.media);
                     sairEscolhaPrioridade = true;
                     break;
 
                 case Constantes.ALTA:
-                    prioridade = "Alta";
+                    tarefasimples.setPrioridade(Prioridade.alta);
                     sairEscolhaPrioridade = true;
                     break;
                 
             }
         }
 
-        TarefaSimples tarefasimples = new TarefaSimples(nome, descricao, prioridade, status);
-
         //Listando tarefa simples
-        tarefasSimples.put(nome, tarefasimples);
+        tarefasSimples.put(descricao, tarefasimples);
 
         // Confirmação de tarefa
         JOptionPane.showMessageDialog(null, "Tarefa criada com sucesso!");
@@ -61,13 +65,12 @@ public class ServicoTarefa {
 
     public void criarTarefaPrazo(){
 
-        
-        String nome = JOptionPane.showInputDialog(null, "Digite o nome da tarefa: ");
         String descricao = JOptionPane.showInputDialog(null, "Digite a descrição da tarefa: ");
-        String prioridade = "";
-        String status = Constantes.NAO_FINALIZADA;
-        String prazo = JOptionPane.showInputDialog(null, "Digite o prazo da tarefa:   exemplo(10/08/2024)");
+        int dia = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o dia(Número) do prazo:   exemplo(12)"));
+        int mes = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o mês(Número) do prazo:   exemplo(9)"));
+        int ano = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o ano(Número) do prazo:   exemplo(2024)"));
 
+        TarefaPrazo tarefaprazo = new TarefaPrazo(descricao, Prioridade.baixa, LocalDate.of(ano, mes, dia));
 
         //----------------------------------------------- Escolha prioridade -----------------------------------------------//
         // >> Menu prioridade
@@ -84,27 +87,25 @@ public class ServicoTarefa {
         
             switch (resultadoEscolhaTarefas + 1) {
                 case Constantes.BAIXA:
-                    prioridade = "Baixa";
+                    tarefaprazo.setPrioridade(Prioridade.baixa);
                     sairEscolhaPrioridade = true;
                     break;
             
                 case Constantes.MEDIA:
-                    prioridade = "Média";
+                    tarefaprazo.setPrioridade(Prioridade.media);
                     sairEscolhaPrioridade = true;
                     break;
 
                 case Constantes.ALTA:
-                    prioridade = "Alta";
+                    tarefaprazo.setPrioridade(Prioridade.alta);
                     sairEscolhaPrioridade = true;
                     break;
                 
             }
         }
 
-        TarefaPrazo tarefaprazo = new TarefaPrazo(nome, descricao, prioridade, status, prazo);
-
         //Listando tarefa com prazo
-        tarefasPrazo.put(nome, tarefaprazo);
+        tarefasPrazo.put(descricao, tarefaprazo);
 
         // Confirmação de tarefa
         JOptionPane.showMessageDialog(null, "Tarefa criada com sucesso!");
@@ -112,13 +113,8 @@ public class ServicoTarefa {
 
     // Visualizar lista de tarefas simples
     public String visualizarTarefasSimples(){
-        String varAuxiliar = "";
+        return tarefasSimples.toString();
 
-        for (HashMap.Entry<String, TarefaSimples> tarefasSimples : tarefasSimples.entrySet()) {
-            varAuxiliar += "Nome: " + tarefasSimples.getValue().getTitulo() + "   -   Descrição: "  + tarefasSimples.getValue().getDescricao() + "   -   Prioridade: "  + tarefasSimples.getValue().getPrioridade() +  "   -   Status: "  + tarefasSimples.getValue().getStatus() +"\n";
-        }
-        
-        return varAuxiliar;
     }
 
     

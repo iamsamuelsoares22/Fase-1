@@ -1,3 +1,4 @@
+package Tarefa;
 import java.time.LocalDate;
 
 public class TarefaPrazo extends Tarefa {

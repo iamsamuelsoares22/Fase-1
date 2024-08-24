@@ -1,3 +1,4 @@
+package Tarefa;
 import java.util.List;
 
 public abstract class Tarefa {
@@ -7,8 +8,9 @@ public abstract class Tarefa {
     private Prioridade prioridade;
     private Status status;
 
-    protected enum Prioridade{baixa, media, alta}
-    protected enum Status{todo, doing, done}
+    protected enum Status{todo, doing, done};
+    public enum Prioridade{baixa, media, alta}
+    
     
     //-------------------------- Métodos getteres --------------------------//
 

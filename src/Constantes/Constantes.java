@@ -1,3 +1,4 @@
+package Constantes;
 public class Constantes {
 
     //Menu principal
@@ -31,10 +32,6 @@ public class Constantes {
     public static final int ATUALIZAR_PROJETO = 1;
     public static final int EXCLUIR_PROJETO = 2;
     public static final int SAIR_AP = 3;  
-
-    //Status tarefa
-    public static final String NAO_FINALIZADA = "Não finalizada";
-    public static final String FINALIZADA = "Finalizada";
 
     //Prioridade tarefa
     public static final int BAIXA = 1;
