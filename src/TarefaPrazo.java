@@ -1,13 +1,51 @@
+import java.time.LocalDate;
+
 public class TarefaPrazo extends Tarefa {
-    
-    @Override
-    public void finalizarTarefa(Tarefa tarefa){
-        tarefa.setStatus("Concluída");
+    private LocalDate prazo;
+
+
+    //-------------------------- Métodos getteres --------------------------//
+    public LocalDate getPrazo() {
+        return prazo;
     }
 
-    //----------------------------------- Construtores -----------------------------------//
-    public TarefaPrazo(String titulo, String descricao, String prioridade, String status, String prazo){
-        super(titulo, descricao, prioridade, status, prazo);
+    //-------------------------- Métodos setteres --------------------------//
+    public void setPrazo(LocalDate prazo) {
+        this.prazo = prazo;
     }
+
+
+
+    //------------------------------------- Funções -------------------------------------//
+    @Override
+	public void executar() {
+		//System.out.println("A tarefa com prazo "+ this.prazo + "e descrição "+ getDescricao() + " está sendo executada.");
+		setStatus(Status.doing);
+	}
+
+    	
+	@Override
+	public void finalizar() {
+		//System.out.println("A tarefa com prazo "+ this.prazo + " e descricao "+  getDescricao() + " está finalizada");
+		setStatus(Status.done);
+	}
+
+
+
+    //------------------------------- Construtores -------------------------------//
+    public TarefaPrazo(String descricao, Prioridade prioridade, LocalDate prazo){
+        super(descricao, prioridade);
+        this.prazo = prazo;
+    }
+
+	@Override
+	public String toString() {
+		String retorno = "O projeto "+ getDescricao() + "tem prazo " +getPrazo();
+	return retorno;
+	}
+
+
+
+
 
 }

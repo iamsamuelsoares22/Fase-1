@@ -14,5 +14,6 @@ public class Main {
         JOptionPane.showMessageDialog(null, "Seja bem-vindo ao seu gerenciador de tarefa");
 
         servicoMenu.menuPrincipal();
+
     }
 }

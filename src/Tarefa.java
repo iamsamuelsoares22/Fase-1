@@ -1,75 +1,74 @@
+import java.util.List;
+
 public abstract class Tarefa {
     
     // Atributos da classe 
-    private String titulo, descricao, proridade, status, prazo;
+    private String descricao;
+    private Prioridade prioridade;
+    private Status status;
 
+    protected enum Prioridade{baixa, media, alta}
+    protected enum Status{todo, doing, done}
     
     //-------------------------- Métodos getteres --------------------------//
-    public String getTitulo() {
-        return titulo;
-    }
 
     public String getDescricao() {
         return descricao;
     }
 
-    public String getProridade() {
-        return proridade;
+    public Prioridade getPrioridade() {
+        return prioridade;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
-    }
-
-    public String getPrazo() {
-        return prazo;
     }
 
 
     //-------------------------- Métodos setteres --------------------------//
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
 
-    public void setProridade(String proridade) {
-        this.proridade = proridade;
+    public void setPrioridade(Prioridade prioridade) {
+        this.prioridade = prioridade;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 
-    public void stePrazo(String prazo) {
-        this.prazo = prazo;
-    }
 
 
     //------------------------------------- Funções -------------------------------------//
-    public void finalizarTarefa(Tarefa tarefa){
-        tarefa.setStatus("Concluída");
+    public void executar(){
+        setStatus(Status.doing);
     }
 
+    public void finalizar() {
+		setStatus(Status.done);
 
-    //----------------------------------- Construtores -----------------------------------//
-    public Tarefa(){}
+	}
 
-    public Tarefa(String titulo, String descricao, String proridade, String status){
-        this.titulo = titulo;
+
+    //------------------------------------ Construtores ------------------------------------//
+    public Tarefa(String descricao, Prioridade prioridade){
         this.descricao = descricao;
-        this.proridade = proridade;
-        this.status = status;
+        this.prioridade = prioridade;
+        this.status = Status.todo;
     }
 
-    public Tarefa(String titulo, String descricao, String proridade, String status, String prazo){
-        this.titulo = titulo;
-        this.descricao = descricao;
-        this.proridade = proridade;
-        this.status = status;
-        this.prazo = prazo;
-    }
+    @Override
+	public String toString() {
+		String retorno = "A tarefa "+ this.descricao + " tem priodade "+ this.prioridade + " e status " + this.status;
+		return retorno;
+	}
+
+
+
+
+
+
 
 }
