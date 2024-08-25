@@ -5,19 +5,16 @@ public class TarefaPrazo extends Tarefa {
     private LocalDate prazo;
 
 
-    //-------------------------- Métodos getteres --------------------------//
     public LocalDate getPrazo() {
         return prazo;
     }
 
-    //-------------------------- Métodos setteres --------------------------//
     public void setPrazo(LocalDate prazo) {
         this.prazo = prazo;
     }
 
 
 
-    //------------------------------------- Funções -------------------------------------//
     @Override
 	public void executar() {
 		//System.out.println("A tarefa com prazo "+ this.prazo + "e descrição "+ getDescricao() + " está sendo executada.");

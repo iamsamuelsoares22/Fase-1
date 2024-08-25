@@ -12,12 +12,10 @@ import Tarefa.TarefaSimples;
 
 public class ServicoTarefa {
 
-    //-------------------------------- Listas --------------------------------//
     public static ArrayList<TarefaSimples> tarefasSimples = new ArrayList<TarefaSimples>();
     public static ArrayList<TarefaPrazo> tarefasComPrazo = new ArrayList<TarefaPrazo>();
 
 
-    //------------------------------ Funções tarefas ------------------------------//
     public void criarTarefaSimples(){
 
         String descricao = JOptionPane.showInputDialog(null, "Digite a descrição da tarefa: ");
@@ -25,17 +23,12 @@ public class ServicoTarefa {
         TarefaSimples tarefasimples = new TarefaSimples(descricao, Prioridade.baixa);
 
         
-        //----------------------------------------------- Escolha prioridade -----------------------------------------------//
-        // >> Menu prioridade
         String[] escolhaPrioridade = {"Baixa", "Média", "Alta"};
         
-        // Variável para a estrutura de repetição
         boolean sairEscolhaPrioridade = false;
 
-        // Repetir programa até que a escolha sair seja executada 
         while(sairEscolhaPrioridade == false){
 
-            // Escolha do Menu principal
             int resultadoEscolhaTarefas = JOptionPane.showOptionDialog(null, "Escolha a prioridade da tarefa: ", "Prioridade", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, escolhaPrioridade, escolhaPrioridade[0]);
         
             switch (resultadoEscolhaTarefas + 1) {
@@ -57,10 +50,8 @@ public class ServicoTarefa {
             }
         }
 
-        //Listando tarefa simples
         tarefasSimples.add(tarefasimples);
 
-        // Confirmação de tarefa
         JOptionPane.showMessageDialog(null, "Tarefa criada com sucesso!");
 
         
@@ -75,17 +66,13 @@ public class ServicoTarefa {
 
         TarefaPrazo tarefaprazo = new TarefaPrazo(descricao, Prioridade.baixa, LocalDate.of(ano, mes, dia));
 
-        //----------------------------------------------- Escolha prioridade -----------------------------------------------//
-        // >> Menu prioridade
+        
         String[] escolhaPrioridade = {"Baixa", "Média", "Alta"};
         
-        // Variável para a estrutura de repetição
         boolean sairEscolhaPrioridade = false;
 
-        // Repetir programa até que a escolha sair seja executada 
         while(sairEscolhaPrioridade == false){
 
-            // Escolha do Menu principal
             int resultadoEscolhaTarefas = JOptionPane.showOptionDialog(null, "Escolha a prioridade da tarefa: ", "Prioridade", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, escolhaPrioridade, escolhaPrioridade[0]);
         
             switch (resultadoEscolhaTarefas + 1) {
@@ -107,14 +94,11 @@ public class ServicoTarefa {
             }
         }
 
-        //Listando tarefa com prazo
         tarefasComPrazo.add(tarefaprazo);
 
-        // Confirmação de tarefa
         JOptionPane.showMessageDialog(null, "Tarefa criada com sucesso!");
     }
 
-    // Visualizar lista de tarefas simples
     public String visualizarTarefasSimples(){
         String varAuxiliar = "";
 
@@ -126,7 +110,6 @@ public class ServicoTarefa {
 
     }
 
-    // Visualizar lista de tarefas simples
     public String visualizarComPrazo(){
         String varAuxiliar = "";
 

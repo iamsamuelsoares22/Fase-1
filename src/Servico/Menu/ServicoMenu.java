@@ -15,9 +15,10 @@ public class ServicoMenu {
     private static String[] escolhaProjetos = {"Criar projeto", "Atualizar/Excluir", "Visualizar", "Sair"};
     // >> Menu consultas
     private static String[] escolhaConsulta = {"Visualizar tarefas", "Visualizar projetos", "Sair"};
+    private static String[] escolhafiltrar = {"Tarefa simples", "Tarefas com prazo", "Todos", "Sair"};
 
 
-    //---------------------------------------- Criando instâncias ----------------------------------------//
+
     ServicoMenuSecundario servicoMenuSecundario = new ServicoMenuSecundario();
     ServicoTarefa servicoTarefa = new ServicoTarefa();
 
@@ -27,13 +28,10 @@ public class ServicoMenu {
     //----------------------------------------- Menu principal -----------------------------------------//
     public void menuPrincipal(){
 
-        // Variável para a estrutura de repetição
         boolean sairMenuPrincipal = false;
 
-        // Repetir programa até que a escolha sair seja executada 
         while(sairMenuPrincipal == false){
 
-            // Escolha do Menu principal
             int resultadoEscolhaPrincipal = JOptionPane.showOptionDialog(null, "Gerenciamento de tarefas e projetos: ", "Menu Principal", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, escolhaPrincipal, escolhaPrincipal[0]);
         
             switch (resultadoEscolhaPrincipal + 1) {
@@ -58,16 +56,12 @@ public class ServicoMenu {
 
     }
 
-    //----------------------------------------- Menu(s) secundários -----------------------------------------//
     public void menuTarefas(){
 
-        // Variável para a estrutura de repetição
         boolean sairMenuTarefas = false;
 
-        // Repetir programa até que a escolha sair seja executada 
         while(sairMenuTarefas == false){
 
-            // Escolha do Menu principal
             int resultadoEscolhaTarefas = JOptionPane.showOptionDialog(null, "Gerenciamento de tarefas: ", "Menu tarefas", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, escolhaTarefas, escolhaTarefas[0]);
         
             switch (resultadoEscolhaTarefas + 1) {
@@ -91,13 +85,10 @@ public class ServicoMenu {
 
     public void menuProjetos(){
 
-        // Variável para a estrutura de repetição
         boolean sairMenuProjetos = false;
 
-        // Repetir programa até que a escolha sair seja executada 
         while(sairMenuProjetos == false){
 
-            // Escolha do Menu principal
             int resultadoEscolhaProjetos = JOptionPane.showOptionDialog(null, "Gerenciamento de projetos: ", "Menu projetos", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, escolhaProjetos, escolhaProjetos[0]);
         
             switch (resultadoEscolhaProjetos + 1) {
@@ -126,13 +117,10 @@ public class ServicoMenu {
 
     public void menuConsultas(){
 
-        // Variável para a estrutura de repetição
         boolean sairMenuConsultas = false;
 
-        // Repetir programa até que a escolha sair seja executada 
         while(sairMenuConsultas == false){
 
-            // Escolha do Menu principal
             int resultadoEscolhaConsulta = JOptionPane.showOptionDialog(null, "Gerenciamento de consultas: ", "Menu consulta", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, escolhaConsulta, escolhaConsulta[0]);
         
             switch (resultadoEscolhaConsulta + 1) {

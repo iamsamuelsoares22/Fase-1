@@ -8,7 +8,6 @@ public class Projeto {
 	private LocalDate fim;
 	
 	
-	//-------------------------- Métodos getteres --------------------------//
 	public String getNome() {
 		return nome;
 	}
@@ -22,7 +21,6 @@ public class Projeto {
 	}
 
 
-	//-------------------------- Métodos setteres --------------------------//
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -37,7 +35,6 @@ public class Projeto {
 
 
 
-	//------------------------------------ Construtores ------------------------------------//
 	public Projeto(String nome, LocalDate inicio, LocalDate fim) {
 		this.nome = nome;
 		this.inicio = inicio;

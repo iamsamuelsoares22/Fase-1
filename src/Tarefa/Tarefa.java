@@ -2,7 +2,6 @@ package Tarefa;
 
 public abstract class Tarefa {
     
-    // Atributos da classe 
     private String descricao;
     private Prioridade prioridade;
     private Status status;
@@ -11,7 +10,6 @@ public abstract class Tarefa {
     public enum Prioridade{baixa, media, alta}
     
     
-    //-------------------------- Métodos getteres --------------------------//
 
     public String getDescricao() {
         return descricao;
@@ -26,7 +24,6 @@ public abstract class Tarefa {
     }
 
 
-    //-------------------------- Métodos setteres --------------------------//
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
@@ -42,7 +39,6 @@ public abstract class Tarefa {
 
 
 
-    //------------------------------------- Funções -------------------------------------//
     public void executar(){
         setStatus(Status.doing);
     }
@@ -53,7 +49,6 @@ public abstract class Tarefa {
 	}
 
 
-    //------------------------------------ Construtores ------------------------------------//
     public Tarefa(String descricao, Prioridade prioridade){
         this.descricao = descricao;
         this.prioridade = prioridade;
